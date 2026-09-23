@@ -450,33 +450,33 @@
 # D.4 Add a get_status() method that returns "PASS" OR "FAIL" based on the score.
 #-----------------------------------------------------------------------
 
-class Student:
-    def __init__(self, name, score):
-        self.name = name
-        self.score = score
+# class Student:
+#     def __init__(self, name, score):
+#         self.name = name
+#         self.score = score
 
     
-    def get_status(self):
-        if self.score >= 70:
-            return "PASS"
-        else:
-            return "FAIL"
+#     def get_status(self):
+#         if self.score >= 70:
+#             return "PASS"
+#         else:
+#             return "FAIL"
 
-student1 = Student("Ada", 75)
-student2 = Student("Grace", 85)
-student3 = Student("Bob", 65)
-student4 = Student("Charlie", 95)
-student5 = Student("Sussie", 55)
-student6 = Student("Petra", 65)
-student7 = Student("Diana", 80)
+# student1 = Student("Ada", 75)
+# student2 = Student("Grace", 85)
+# student3 = Student("Bob", 65)
+# student4 = Student("Charlie", 95)
+# student5 = Student("Sussie", 55)
+# student6 = Student("Petra", 65)
+# student7 = Student("Diana", 80)
 
-students = [student1, student2, student3, student4, student5, student6, student7]
+# students = [student1, student2, student3, student4, student5, student6, student7]
 
 
-print("\n--- Student Exam Results ---\n")
-for student in students:
-    print(f"Name: {student.name:10s} | Score: {student.score:2d} | Status: {student.get_status()}")
-    print()
+# print("\n--- Student Exam Results ---\n")
+# for student in students:
+#     print(f"Name: {student.name:10s} | Score: {student.score:2d} | Status: {student.get_status()}")
+#     print()
 
 
 
@@ -485,12 +485,75 @@ for student in students:
 # D.5 Loop through the students again and print each student's name and status.
 #-----------------------------------------------------------------
 
+# class Student:
+#     def __init__(self, name, score):
+#         self.name = name
+#         self.score = score
+
+#     def get_status(self):
+#         if self.score >= 70:
+#             return "PASS"
+#         else:
+#             return "FAIL"
+
+# student1 = Student("Ada", 75)
+# student2 = Student("Grace", 85)
+# student3 = Student("Bob", 65)
+# student4 = Student("Charlie", 95)
+# student5 = Student("Sussie", 55)
+# student6 = Student("Petra", 65)
+# student7 = Student("Diana", 80)
+
+# students = [student1, student2, student3, student4, student5, student6, student7]
+
+# print("\n   --- Students Exam Results ---\n")
+
+# for student in students:
+#     print(f"Name: {student.name:10s} | Score: {student.score:2d} | Status: {student.get_status()}")
+
+
+
+# print("\n   --- Student Statuses ---\n")
+
+# for student in students:
+#     print(f"Name: {student.name:10s} | Status: {student.get_status()}")
+
+
 
 # D.6 Use a list comprehension to create a new list containing only students with a score of 70  or higher.
 #-----------------------------------------------------
 
+# class Student:
+#     def __init__(self, name, score):
+#         self.name = name
+#         self.score = score
+
+#     def get_status(self):
+#         if self.score >= 70:
+#             return "PASS"
+#         else:
+#             return "FAIL"
+
+# student1 = Student("Ada", 75)
+# student2 = Student("Grace", 85)
+# student3 = Student("Bob", 65)
+# student4 = Student("Charlie", 95)
+# student5 = Student("Sussie", 55)
+# student6 = Student("Petra", 65)
+# student7 = Student("Diana", 80)
 
 
+# students = [student1, student2, student3, student4, student5, student6, student7]
+
+# passed_students = [student for student in students if student.score >= 70]
+
+
+# print("\n --- Students with score 70 or higher ---\n")
+
+# for student in passed_students:
+#     print(f"Name: {student.name:10s} | Score: {student.score}")
+
+# print()
 
 #******************************************************************************************************
 #  LAB 7                        Part E - Objects inside objects                                       *
@@ -501,8 +564,17 @@ for student in students:
 #--------------------------------------------------------------
 
 
+# class Teacher:
+#     def __init__(self, name):
+#         self.name = name
 
-# E.2 
+
+# teacher1 = Teacher("Dr. Agasi")
+
+# print("Teacher name:", teacher1.name)
+
+
+# E.2 Create a Course class with a course name and a teacher. The teacher should be a Teacher object.
 #---------------------------------------------------------------------------
 
 

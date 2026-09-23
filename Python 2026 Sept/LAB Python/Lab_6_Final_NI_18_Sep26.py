@@ -25,15 +25,15 @@
 # print("We are going through list comprehension:", squares_comprehension)
 
 
-# Part A.2. Create a list containing only even numbers from 1-100
-#----------------------------------------------------------------
+# # Part A.2. Create a list containing only even numbers from 1-100
+# #----------------------------------------------------------------
      
-# 1st way - classic
+# ## 1st way - classic
 
 # even_numbers =[]
 
 # for number in range (1,101):
-#     if number % 2 == 0 :
+#     if number % 2 == 0 :  
 #         even_numbers.append(number)
 
 # print(even_numbers)
@@ -50,10 +50,10 @@
 
 
 
-# Part A.3 Convert a list of names to stripped, title-cased names.
-#-----------------------------------------------------------------
+# # Part A.3 Convert a list of names to stripped, title-cased names.
+# #-----------------------------------------------------------------
 
-# 1st way - classic by for-loop
+# # 1st way - classic by for-loop
 
 # start_list = ["Ada", "  bob", "  GvidO  ", " luCIA  ", "SteFAN  ", " Petar", "   EMIL"]
 
@@ -78,7 +78,7 @@
 # Part A.4 Given scores, create a list containing only passing scores.
 #---------------------------------------------------------------------
 
-# via - list comprehension
+##via - list comprehension
 
 # scores = [1, 3, 4, 5, 7, 9, 6, 3, 10, 4, 8, 9]
 
@@ -163,7 +163,7 @@
 #----------------------------------------------------------------------------------------------------------
 
 
-# start_list = ["Ada", "bob", "Gvido", "Lucia", "Stefan", "Petar", "EMIL"]
+# start_list = ["Ada", "bob", "Gvido", "Lucia   ", "   Stefan", "Petar ", "EMIL"]
 
 # normalized_set = {item.strip().lower() for item in start_list}
 
@@ -303,11 +303,11 @@
 # D.2 Create a dictionary using dict(zip(keys, values)).
 #-------------------------------------------------------
 
-# keys = ["Anna", "Bob", "Diana", "Leo", "Emil", "Stefan"]
-# values = [85, 75, 94, 65, 57, 72]
+keys = ["Anna", "Bob", "Diana", "Leo", "Emil", "Stefan"]
+values = [85, 75, 94, 65, 57, 72]
 
-# key_values = dict(zip(keys, values))
-# print(key_values)
+key_values = dict(zip(keys, values))
+print(key_values)
 
 
 # D.3 Combine three lists: product name, price and stock.
@@ -474,101 +474,101 @@ y = 11
 # prices = [7000, 1550, 200, 300]  # kr
 # stock = [4, 5, 16, ]
 
-products = [
-    {"name": "  Laptop  ", "category": "Electronics", "price": 7000.00, "stock": 4},
-    {"name": "Printer  ", "category": "Electronics", "price": 1550.00, "stock": 5},
-    {"name": "   Mouse", "category": "Electronics", "price": 200.00, "stock": 16},
-    {"name": "UPS  ", "category": "Electronics", "price": 3000.00, "stock": 3},
-    {"name": "wireless mouse", "category": "electronics", "price": "25.50", "stock": 0},
-    {"name": " KEYBOARD ", "category": "ELECTRONICS", "price": 45.0, "stock": 12},
-    {"name": "monitor 27 inch", "category": "Electronics ", "price": 300.00, "stock": 3},
-    {"name": "  usb-c cable ", "category": "Accessories", "price": 12.99, "stock": 50},
-    {"name": " desk lamp", "category": "home & kitchen", "price": 35.00, "stock": 0},
-    {"name": "BLUETOOTH speaker", "category": "Electronics", "price": 89.99, "stock": 15},
-    {"name": "  water bottle  ", "category": "fitness", "price": 18.50, "stock": 20},
-    {"name": "notebook A5", "category": "stationery", "price": 4.50, "stock": 100}  
-]
+# products = [
+#     {"name": "  Laptop  ", "category": "Electronics", "price": 7000.00, "stock": 4},
+#     {"name": "Printer  ", "category": "Electronics", "price": 1550.00, "stock": 5},
+#     {"name": "   Mouse", "category": "Electronics", "price": 200.00, "stock": 16},
+#     {"name": "UPS  ", "category": "Electronics", "price": 3000.00, "stock": 3},
+#     {"name": "wireless mouse", "category": "electronics", "price": "25.50", "stock": 0},
+#     {"name": " KEYBOARD ", "category": "ELECTRONICS", "price": 45.0, "stock": 12},
+#     {"name": "monitor 27 inch", "category": "Electronics ", "price": 300.00, "stock": 3},
+#     {"name": "  usb-c cable ", "category": "Accessories", "price": 12.99, "stock": 50},
+#     {"name": " desk lamp", "category": "home & kitchen", "price": 35.00, "stock": 0},
+#     {"name": "BLUETOOTH speaker", "category": "Electronics", "price": 89.99, "stock": 15},
+#     {"name": "  water bottle  ", "category": "fitness", "price": 18.50, "stock": 20},
+#     {"name": "notebook A5", "category": "stationery", "price": 4.50, "stock": 100}  
+# ]
 
-# F.2 Create a cleanded list where names/categories are normalized. Use comprehensions where readable.
-#-----------------------------------------------------------------------------------------------------
+# # F.2 Create a cleanded list where names/categories are normalized. Use comprehensions where readable.
+# #-----------------------------------------------------------------------------------------------------
 
-cleaned_list = [
-    { 
-        "name": prod["name"].strip().title(),
-        "category": prod["category"].strip().title(),
-        "price": float(prod["price"]),
-        "stock": prod["stock"]
-    }
-    for prod in products
-]
+# cleaned_list = [
+#     { 
+#         "name": prod["name"].strip().title(),
+#         "category": prod["category"].strip().title(),
+#         "price": float(prod["price"]),
+#         "stock": prod["stock"]
+#     }
+#     for prod in products
+# ]
 
-print("\n   --- Cleanded list of the products:   ---\n")
+# print("\n   --- Cleanded list of the products:   ---\n")
 
-for item in cleaned_list:
-    print(item)
+# for item in cleaned_list:
+#     print(item)
 
-# F.3 Create a list of in-stock products.
-#----------------------------------------
+# # F.3 Create a list of in-stock products.
+# #----------------------------------------
 
-in_stock_prod = [prod for prod in cleaned_list if prod["stock"] > 0]
+# in_stock_prod = [prod for prod in cleaned_list if prod["stock"] > 0]
 
-print("\n   ---  List of products in the stock:   ---\n")
+# print("\n   ---  List of products in the stock:   ---\n")
 
-for item in in_stock_prod:
-    print(item)
-print()
+# for item in in_stock_prod:
+#     print(item)
+# print()
 
-# F.4  Create a set of unique normalized categories.
-#---------------------------------------------------
+# # F.4  Create a set of unique normalized categories.
+# #---------------------------------------------------
 
-categories = {cat["category"].strip().title() for cat in products}
+# categories = {cat["category"].strip().title() for cat in products}
 
-print("\n   ---  Set of unique normalized categories:   ---\n")
+# print("\n   ---  Set of unique normalized categories:   ---\n")
 
-print(categories)
-print()
+# print(categories)
+# print()
 
-# F.5 Create a dictionary mapping product name to inventory value (price * stock).
-#---------------------------------------------------------------------------------
+# # F.5 Create a dictionary mapping product name to inventory value (price * stock).
+# #---------------------------------------------------------------------------------
 
-inventory_values = {
-    prod["name"]: prod["price"] * prod["stock"] 
-    for prod in cleaned_list
-}
+# inventory_values = {
+#     prod["name"]: prod["price"] * prod["stock"] 
+#     for prod in cleaned_list
+# }
 
-print("\n   --- Dictionary of inventory values per product:   ---\n")
+# print("\n   --- Dictionary of inventory values per product:   ---\n")
 
-for name, value in inventory_values.items():
-    print(f"{name:20s}: {value:8.2f} kr")
-print()
-
-
-
-# F.6 Sort procucts by inventory value from highest to lowest.
-#-------------------------------------------------------------
-
-sorted_inventory = dict(
-    sorted(inventory_values.items(), key=lambda item: item[1], reverse=True)
-)
-
-print("\n   --- Products Sorted by Inventory Value (Highest to Lowest):   ---\n")
-
-for name, value in sorted_inventory.items():
-    print(f"{name:20s}: {value:8.2f} kr")
+# for name, value in inventory_values.items():
+#     print(f"{name:20s}: {value:8.2f} kr")
+# print()
 
 
 
-# F.7 Use enumerate to print a ranked report.
-#--------------------------------------------
+# # F.6 Sort procucts by inventory value from highest to lowest.
+# #-------------------------------------------------------------
 
-print("\n" + "=" * 45)
-print("          RANKED REPORT       ")
-print("=" * 45)
+# sorted_inventory = dict(
+#     sorted(inventory_values.items(), key=lambda item: item[1], reverse=True)
+# )
 
-for rank, (name, value) in enumerate(sorted_inventory.items(), start=1):
-    print(f"{rank:2d}. | {name:20s} | {value:8.1f} kr")
+# print("\n   --- Products Sorted by Inventory Value (Highest to Lowest):   ---\n")
 
-print("=" * 45)
+# for name, value in sorted_inventory.items():
+#     print(f"{name:20s}: {value:8.2f} kr")
+
+
+
+# # F.7 Use enumerate to print a ranked report.
+# #--------------------------------------------
+
+# print("\n" + "=" * 45)
+# print("          RANKED REPORT       ")
+# print("=" * 45)
+
+# for rank, (name, value) in enumerate(sorted_inventory.items(), start=1):
+#     print(f"{rank:2d}. | {name:20s} | {value:8.1f} kr")
+
+# print("=" * 45)
 
 # F.8 Use zip to combine at least one pair of separate derived lists in a meaningful way.
 #----------------------------------------------------------------------------------------
