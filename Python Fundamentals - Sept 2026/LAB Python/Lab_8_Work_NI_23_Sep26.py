@@ -240,13 +240,14 @@
 
 
 
-# C.3 Use super() so SavingSccount reuses the initialization from Account.
+# C.3 Use super() so SavingsAccount reuses the initialization from Account.
 #-------------------------------------------------------------------------
 
 # class Account:
 #     def __init__(self, owner, balance=0.0):
 #         self.owner = owner
 #         self.balance = balance
+
 
 
 # class SavingsAccount(Account):
@@ -259,10 +260,10 @@
 
 # savings = SavingsAccount("Ada", 1000.0, 0.05)
 
-# print(f"\nOwner: {savings.owner}")
+# print("\n --- Savings Account  ---\n")
+# print(f"Owner: {savings.owner}")
 # print(f"Status: {savings.balance}")
-# print(f"Tax rate: {savings.interest_rate * 100}%\n")
-
+# print(f"Interest rate: {savings.interest_rate * 100}%\n")
 
 
 
@@ -271,9 +272,67 @@
 #------------------------------------------------------------------------------------------------
 
 
-# C.5 Write hte "is-s" statement that explains why this inheritance relationship makes sense.
+# class Account:
+#     def __init__(self, owner, balance=0.0):
+#         self.owner = owner
+#         self.balance = balance
 
 
+
+# class SavingsAccount(Account):
+#     def __init__(self, owner, balance=0.0, interest_rate=0.02):
+       
+#         super().__init__(owner, balance)
+#         self.interest_rate = interest_rate
+
+
+# savings1 = SavingsAccount("Ada", 11000.0, 0.05)
+# savings2 = SavingsAccount("Bob", 50000.0, 0.03)
+
+
+# print("--- Savings Account 1 ---   ")
+# print(f"\nOwner: {savings1.owner}")
+# print(f"Status: {savings1.balance} kr")
+# print(f"Interest rate: {savings1.interest_rate * 100}%\n")
+
+
+# print("--- Savings Account 2 ---")
+# print(f"Owner: {savings2.owner}")
+# print(f"Balance: {savings2.balance} kr")
+# print(f"Interest rate: {savings2.interest_rate * 100}%\n")
+
+
+
+
+# C.5 Write the "is-a" statement that explains why this inheritance relationship makes sense.
+
+
+# class Account:
+#     def __init__(self, owner, balance=0.0):
+#         self.owner = owner
+#         self.balance = balance
+
+
+# class SavingsAccount(Account):
+#     def __init__(self, owner, balance=0.0, interest_rate=0.02):
+       
+#         super().__init__(owner, balance)
+#         self.interest_rate = interest_rate
+
+
+
+# savings1 = SavingsAccount("Ada", 1000.0, 0.05)
+# savings2 = SavingsAccount("Grace", 2500.0)  
+
+# print("\n--- Savings Account 1 ---")
+# print(f"Owner: {savings1.owner}")
+# print(f"Balance: {savings1.balance}")
+# print(f"Interest rate: {savings1.interest_rate * 100}%\n")
+
+# print("--- Savings Account 2 ---")
+# print(f"Owner: {savings2.owner}")
+# print(f"Balance: {savings2.balance}")
+# print(f"Interest rate: {savings2.interest_rate * 100}%\n")
 
 
 
@@ -284,10 +343,49 @@
 # D.1 Create a base class Employee with name and a method get_information().
 #-------------------------------------------------------------------------
 
+# class Employee:
+#     def __init__(self, name):
+#         self.name = name
+
+#     def get_information(self):
+#         return f"\nEmployee: {self.name}\n"
+
+
+# # Testiranje D.1 klase
+# emp = Employee("Alice")
+# print(emp.get_information())
 
 
 # D.2 Create Developer(Employee) and add a method that only Developer has.
-#-------------------------------------------------------
+#-------------------------------------------------------------------------
+
+
+# class Employee:
+#     def __init__(self, name):
+#         self.name = name
+
+#     def get_information(self):
+#         return f"Employee: {self.name}"
+
+
+
+# class Developer(Employee):
+#     def __init__(self, name, programming_language="Python"):
+       
+#         super().__init__(name)
+#         self.programming_language = programming_language
+
+    
+#     def write_code(self):
+#         return f"{self.name} is writing {self.programming_language} code."
+
+
+# dev = Developer("Bob", "Python")
+
+# print()
+# print(dev.get_information())
+# print(dev.write_code())
+# print()
 
 
 
@@ -295,11 +393,81 @@
 #--------------------------------------------------------
 
 
+# class Employee:
+#     def __init__(self, name):
+#         self.name = name
+
+#     def get_information(self):
+#         return f"\nEmployee: {self.name}"
+
+
+# class Developer(Employee):
+#     def __init__(self, name, programming_language="Python"):
+#         super().__init__(name)
+#         self.programming_language = programming_language
+
+#     def write_code(self):
+#         return f"{self.name} is writing {self.programming_language} code."
+
+
+# class Manager(Employee):
+#     def __init__(self, name, department="IT"):
+#         super().__init__(name)
+#         self.department = department
+
+  
+#     def conduct_meeting(self):
+#         return f"{self.name} is conducting a meeting for the {self.department} department.\n"
+
+
+# mngr = Manager("Charlie", "Engineering")
+
+# print(mngr.get_information())
+# print(mngr.conduct_meeting())
+
+
 
 # D.4 Demonstrate that both subclasses can use inherited behaviour from Emplyee. 
 #-----------------------------------------------------------------
 
 
+# class Employee:         # Parent Class (Base Class)
+#     def __init__(self, name, salary):
+#         self.name = name
+#         self.salary = salary
+
+    
+#     def get_details(self):          # Here we use inherited behaviour from Emplyee. 
+#          return f"Employee: {self.name} | Salary: {self.salary:,.0f} kr"
+
+
+
+# class Developer(Employee):   # subclass / Child Class
+#     def __init__(self, name, salary, programming_language):
+        
+#         super().__init__(name, salary)   # Here we call constructor of Parent Class (Employee)
+#         self.programming_language = programming_language
+
+
+
+# class Manager(Employee):      # subclass / Child Class
+#     def __init__(self, name, salary, department):
+    
+#         super().__init__(name, salary)  # Here, we call also constructor of Parent Class (Employee)
+#         self.department = department
+
+
+
+# dev = Developer("Ada", 55000, "Python")      # subclass object1
+# mgr = Manager("Bob", 75000, "Engineering")   # subclass object2
+
+# print()
+# print(dev.get_details())  # Output: Employee: Ada | Salary: 75,000 kr
+# print(mgr.get_details())  # Output: Employee: Bob | Salary:  95,000 kr
+
+
+# print(f"\nDeveloper Language: {dev.programming_language}")
+# print(f"Manager Department: {mgr.department}\n")
 
 
 # D.5 Demonstrate that en Employee object cannot automatically use a method that only exists in one of its subclasses.
@@ -316,6 +484,15 @@
 
 # E.1 Create a base class Device with brand and year.
 #--------------------------------------------------------------
+
+# class Device:
+#     def __init__(self, brand, year):
+#         self.brand = brand
+#         self.year = year
+
+
+# device = Device("Dell", 2023)
+# print(f"Brand: {device.brand}, Year: {device.year}")
 
 
 
