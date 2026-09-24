@@ -153,6 +153,9 @@
 # print(student2.name, student2.score, student2.active)  # i ovo ce raditi dobro, povuci ce iz 1
 # # sto je dobra stvar kod OOP
 
+# Keywords arguments also works
+#------------------------------
+
 # student3 = Student(
 #     name="Grace",
 #     score=99,
