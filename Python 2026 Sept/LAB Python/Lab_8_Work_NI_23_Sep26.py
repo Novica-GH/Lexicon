@@ -7,11 +7,12 @@
 
 
 #********************************************************************************************
-#  LAB 8                  Part A -  OOP Part2 Mutable default arguments
+#  LAB 8             Part A -  OOP Part2 Mutable default arguments
 #********************************************************************************************
 
-# Part A.1. Create a BadTeam class with name and a default parameter member=[]. Add an add_member() method.
-#------------------------------------------------------------------------------------------
+# Part A.1. Create a BadTeam class with name and a default parameter member=[]. 
+#           Add an add_member() method.
+#------------------------------------------------------------------------------
 
 # class BadTeam:
     
@@ -24,13 +25,11 @@
 #         self.members.append(member_name)
 
 
-
 # team1 = BadTeam("Ada")
 # team2 = BadTeam("Bob")
 
 # team1.add_member("Grace")
 # team2.add_member("Charlie")
-
 
 # print(f"Team 1 members: {team1.members}")
 # print(f"Team 2 members: {team2.members}")
@@ -39,23 +38,20 @@
 
 
 
-
-# Part A.2. Create two BadTeam objects without providing a members list. Add a member to only one team and 
-#           print both lists. Explain in a comment what happend.
-#----------------------------------------------------------------
+# Part A.2. Create two BadTeam objects without providing a members list. 
+#           Add a member to only one team and print both lists. 
+#           Explain in a comment what happend.
+#------------------------------------------------------------------------
      
 # class BadTeam:
     
 #     def __init__(self, members=[]):
 #         self.members = members
 
-
 # team1 = BadTeam()  # two objects
 # team2 = BadTeam()
 
-
 # team1.members.append("Ada")
-
 
 # print(f"Team 1 members: {team1.members}")   #  Team 1 members: ['Ada']
 # print(f"Team 2 members: {team2.members}")   #  Team 2 members: ['Ada'] !!!
@@ -64,7 +60,8 @@
 
 
 
-# Part A.3 Create a corrected Team class using None as the default value and create a new list inside __init__.
+# Part A.3 Create a corrected Team class using None as the default value 
+#           and create a new list inside __init__.
 #-----------------------------------------------------------------
 
 # class Team:
@@ -75,10 +72,8 @@
 #         else:
 #             self.members = members
 
-
 # team1 = Team()   # two Team objects
 # team2 = Team()
-
 
 # team1.members.append("Grace")   # adding a member just in team1
 
@@ -91,7 +86,7 @@
 
 
 # Part A.4 Repeat the test with two Team objects and show that each object now has its own list.
-#---------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------
 
 
 # class Team:
@@ -107,7 +102,6 @@
 # team2 = Team()
 
 # team1.members.append("Ada")
-
 
 # print("Team 1 members:", team1.members)  # Team 1 members: ['Grace']
 # print("Team 2 members:", team2.members)  # Team 2 members: []
@@ -128,14 +122,13 @@
 
 
 # Part B.1 Represent a movie using a dictionary with title, director and rating.
-#--------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 
 # movie = {
 #     "title": "Tango & Cash",
 #     "director": "Andrei Konchalovsky",
 #     "rating": 7.2
 # }
-
 
 # print(f"Title: {movie['title']}")
 # print(f"Director: {movie['director']}")
@@ -145,7 +138,7 @@
 
 
 # Part B.2 Represent the same information using a Movie class.
-#----------------------------------------------------------------------------------------------------------
+#-------------------------------------------------------------
 
 # class Movie:
 #     def __init__(self, title, director, rating):
@@ -156,7 +149,6 @@
 
 # movie = Movie("Tango & Cash", "Andrei Konchalovsky", 7.2)
 
-
 # print(f"Title: {movie.title}")
 # print(f"Director: {movie.director}")
 # print(f"Rating: {movie.rating}")
@@ -164,9 +156,9 @@
 
 
 
-# Part B.3. Add a method to Movie that returns whether the movie is highly rated. Choose a sensible rating threshold.
-#--------------------------------------------------------------------------------------
-
+# Part B.3. Add a method to Movie that returns whether the movie is highly rated. 
+#           Choose a sensible rating threshold.
+#--------------------------------------------------------------------------------
 
 # class Movie:
 #     def __init__(self, title, director, rating):
@@ -188,10 +180,9 @@
 # print(f"Is '{movie2.title}' highly rated? {movie2.is_highly_rated()}")  # False
 
 
-
-# Part B.4 In comments, briefly explain one situatio where you would choose a dictionary and one where you would choose a class.
-#----------------------------------------------------------------------------------------------------
-
+# Part B.4 In comments, briefly explain one situatio where you would choose a dictionary 
+#           and one where you would choose a class.
+#---------------------------------------------------------------------------------------
 
 
 
@@ -202,47 +193,47 @@
 
 
 # C.1. Create a base class Account with owner and balance.
-#--------------------------------------------------------------------
+#-----------------------------------------------------------
 
-class Account:
-    def __init__(self, owner, balance):
-        self.owner = owner
-        self.balance = balance
+# class Account:
+#     def __init__(self, owner, balance):
+#         self.owner = owner
+#         self.balance = balance
 
   
-account = Account("Ada", 1000.0)
-print(f"Owner: {account.owner} | Balance: {account.balance}")
+# account = Account("Ada", 1000.0)
+# print(f"Owner: {account.owner} | Balance: {account.balance}")
 
 
 
 
 
 # C.2 Create SavingsAccount(Account) with an additional interest_rate attribute.
-#-----------------------------------------
+#--------------------------------------------------------------------------------
 
-class Account:
-    def __init__(self, owner, balance):
-        self.owner = owner
-        self.balance = balance
+# class Account:
+#     def __init__(self, owner, balance):
+#         self.owner = owner
+#         self.balance = balance
 
 
-class SavingsAccount(Account):
-    def __init__(self, owner, balance, interest_rate):
+# class SavingsAccount(Account):
+#     def __init__(self, owner, balance, interest_rate):
         
-        super().__init__(owner, balance)
+#         super().__init__(owner, balance)
         
-        self.interest_rate = interest_rate
+#         self.interest_rate = interest_rate
 
-    def add_interest(self):
+#     def add_interest(self):
        
-        interest = self.balance * self.interest_rate
-        self.balance += interest
-        return interest
+#         interest = self.balance * self.interest_rate
+#         self.balance += interest
+#         return interest
 
 
 
-spar = SavingsAccount("Ada", 1000.0, 0.05)
-print(f"Owner: {spar.owner} | Balance: {spar.balance} | Interest rate: {spar.interest_rate * 100}%")
+# spar = SavingsAccount("Ada", 1000.0, 0.05)
+# print(f"Owner: {spar.owner} | Balance: {spar.balance} | Interest rate: {spar.interest_rate * 100}%")
 
 
 
@@ -250,7 +241,29 @@ print(f"Owner: {spar.owner} | Balance: {spar.balance} | Interest rate: {spar.int
 
 
 # C.3 Use super() so SavingSccount reuses the initialization from Account.
-#------------------------------------------------------------
+#-------------------------------------------------------------------------
+
+# class Account:
+#     def __init__(self, owner, balance=0.0):
+#         self.owner = owner
+#         self.balance = balance
+
+
+# class SavingsAccount(Account):
+#     def __init__(self, owner, balance=0.0, interest_rate=0.02):
+       
+#         super().__init__(owner, balance)
+        
+#         self.interest_rate = interest_rate
+
+
+# savings = SavingsAccount("Ada", 1000.0, 0.05)
+
+# print(f"\nOwner: {savings.owner}")
+# print(f"Status: {savings.balance}")
+# print(f"Tax rate: {savings.interest_rate * 100}%\n")
+
+
 
 
 
