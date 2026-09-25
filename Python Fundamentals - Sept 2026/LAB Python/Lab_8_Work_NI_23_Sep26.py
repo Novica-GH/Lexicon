@@ -496,6 +496,8 @@
 
 
 
+
+
 # E.2 Add useful shared initialization logic inside Device, for example validation that year cannot be 
 #     negative and an attribute such as is_active =True.
 #---------------------------------------------------------------------------
